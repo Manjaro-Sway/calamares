@@ -3,8 +3,8 @@
 pkgname=calamares
 pkgver=3.2.62
 _pkgver=3.2.62
-pkgrel=20
-_commit=95e8c914680737e1fe71d121a978fff749de7b3a
+pkgrel=21
+_commit=a397989c9aa6c0f8b9c28a481e70e9501a900beb
 pkgdesc='Distribution-independent installer framework'
 arch=('i686' 'x86_64')
 license=('BSD-2-Clause AND CC0-1.0 AND CC-BY-4.0 AND GPL-3.0-or-later AND LGPL-2.0-only AND LGPL-2.1-only AND LGPL-3.0-or-later AND MIT')
@@ -20,18 +20,18 @@ backup=('usr/share/calamares/modules/bootloader.conf'
         'usr/share/calamares/modules/initcpio.conf'
         'usr/share/calamares/modules/unpackfs.conf')
 
-source+=("$pkgname-$pkgver.tar.gz::$url/-/archive/v$pkgver/calamares-v$pkgver.tar.gz"
+source+=(#"$pkgname-$pkgver.tar.gz::$url/-/archive/v$pkgver/calamares-v$pkgver.tar.gz"
          'arch-appstream-qt5.patch'
          '2246-v32.patch'
-         #"$pkgname-$pkgver-$pkgrel.tar.gz::$url/-/archive/$_commit/$pkgname-$_commit.tar.gz"
+         "$pkgname-$pkgver-$pkgrel.tar.gz::$url/-/archive/$_commit/$pkgname-$_commit.tar.gz"
         )
-sha256sums=('e1e0ca355fad4a95785d966b94c9374227ad1e4badee212298647a093288951e'
-            'd46d58816f3713f5468a3f120c7613a23aa66d47a1b0c38c441f856056d7c993'
-            '6044d672a896200fbd319795bfd40a1c012e4ef6cf0dafeeae7e1d021d92d96f')
+sha256sums=('d46d58816f3713f5468a3f120c7613a23aa66d47a1b0c38c441f856056d7c993'
+            '6044d672a896200fbd319795bfd40a1c012e4ef6cf0dafeeae7e1d021d92d96f'
+            '6f447ccf3cb04fd7ed18bc26c482a008c1caed64a83e6c519e12843a4bc2933b')
 
 prepare() {
-	#mv ${srcdir}/calamares-${_commit} ${srcdir}/calamares-${pkgver}
-	mv ${srcdir}/calamares-v${pkgver} ${srcdir}/calamares-${pkgver}
+	mv ${srcdir}/calamares-${_commit} ${srcdir}/calamares-${pkgver}
+	#mv ${srcdir}/calamares-v${pkgver} ${srcdir}/calamares-${pkgver}
 	cd ${srcdir}/calamares-${pkgver}
 	sed -i -e 's/"Install configuration files" OFF/"Install configuration files" ON/' CMakeLists.txt
 	
