@@ -1,6 +1,7 @@
 # Maintainer: Philip Müller <philm[at]manjaro[dog]org>
 
 pkgname=calamares
+epoch=10
 pkgver=3.3.8
 _pkgver=3.3.8
 pkgrel=1
