@@ -1,0 +1,4 @@
+_extends: manjaro-contrib/.github
+repository:
+  homepage: https://gitlab.manjaro.org/packages/extra/calamares.git
+  topics: arch, package, x86-64, aarch64

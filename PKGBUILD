@@ -4,11 +4,11 @@ pkgname=calamares
 pkgver=3.3.8
 _pkgver=3.3.8
 pkgrel=1
-_commit=5a9d1879ee2459509eb0b0bdfe7b5754a8ae40fd
+_commit=34a8cf4fa0a299dcd59d5427cac8d0236f0f042f
 pkgdesc='Distribution-independent installer framework'
 arch=('i686' 'x86_64')
 license=('BSD-2-Clause AND CC0-1.0 AND CC-BY-4.0 AND GPL-3.0-or-later AND LGPL-2.0-only AND LGPL-2.1-only AND LGPL-3.0-or-later AND MIT')
-url="https://gitlab.manjaro.org/applications/calamares"
+url="https://gitlab.manjaro.org/boredland/calamares"
 depends=('kconfig' 'kcoreaddons' 'kiconthemes' 'ki18n' 'solid' 'yaml-cpp' 'kpmcore'
 	'boost-libs' 'ckbcomp' 'hwinfo' 'qt6-svg' 'polkit-qt6'
 	'squashfs-tools' 'libpwquality' 'python')
@@ -21,7 +21,7 @@ backup=('usr/share/calamares/modules/bootloader.conf'
 source+=(#"$pkgname-$pkgver.tar.gz::$url/-/archive/v$pkgver/calamares-v$pkgver.tar.gz"
          "$pkgname-$pkgver-$pkgrel.tar.gz::$url/-/archive/$_commit/$pkgname-$_commit.tar.gz"
         )
-sha256sums=('81e62ebea429531d82ba0eb5ab3f61220ddca5e572c777d1ebef9cb3f84c6766')
+sha256sums=('ff25298b23d3e7e60de0790a34151bd2851d88aed1881a3effcbc1839f1acb00')
 
 prepare() {
 	mv ${srcdir}/calamares-${_commit} ${srcdir}/calamares-${pkgver}
